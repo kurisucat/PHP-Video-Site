@@ -107,7 +107,7 @@ function editMedia(id) {
 			if (obj.id) {
 				document.getElementById('mediaDialogTitle').innerHTML = '编辑媒体';
 				document.getElementById('mediaDialogId').value = obj.id;
-				document.getElementById('mediaDialogName').value = obj.name;
+				document.getElementById('mediaDialogDescription').value = obj.description;
 				document.getElementById('mediaDialogUrl').value = obj.url;
 				
 				mdui.mutation('#mediaDialog');

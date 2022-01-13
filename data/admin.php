@@ -111,6 +111,7 @@
 				$return = array(
 					'id'   => $mediaNow['id'],
 					'name' => $mediaNow['name'],
+                    'description' => $mediaNow['description'],
 					'url'  => $mediaNow['url']
 				);
 				
@@ -121,11 +122,12 @@
 			}
 			
 		} elseif ($_POST['do'] == 1) {
-			if (empty($_POST['name']) || empty($_POST['url']))
+			if (empty($_POST['name']) || empty($_POST['url']) || empty($_POST['description']))
 				die('-999');
 			
 			$value = Array(
 				'name' => htmlspecialchars(stripslashes(trim($_POST['name']))),
+                'description' => htmlspecialchars(stripslashes(trim($_POST['description']))),
 				'url' => htmlspecialchars(stripslashes(trim($_POST['url'])))
 			);
 			if ($db->insert('data', $value))
@@ -134,12 +136,13 @@
 				echo 'failed';
 			
 		} elseif ($_POST['do'] == 2) {
-			if (!isset($_POST['mediaid']) || empty($_POST['name']) || empty($_POST['url']))
+			if (!isset($_POST['mediaid']) || empty($_POST['name']) || empty($_POST['url']) || empty($_POST['description']))
 				die('-999');
 			
 			$db->where('id', htmlspecialchars(stripslashes(trim($_POST['mediaid']))));
 			if ($db->update('data', Array(
 				'name' => htmlspecialchars(stripslashes(trim($_POST['name']))),
+                'description' => htmlspecialchars(stripslashes(trim($_POST['description']))),
 				'url'  => htmlspecialchars(stripslashes(trim($_POST['url']))))
 			))
 				echo 'success';

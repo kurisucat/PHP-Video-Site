@@ -13,11 +13,12 @@
 
 		<div class="mdui-textfield mdui-textfield-floating-label" style="padding-top:0px;">
 			<i class="mdui-icon material-icons">&#xe0be;</i>
-			<label class="mdui-textfield-label">邮箱</label>
+			<label class="mdui-textfield-label">邮箱 / Q号（数字）</label>
 			<input type="email" id="fp_email" class="mdui-textfield-input" required />
-			<div class="mdui-textfield-error">请输入合法的邮箱格式</div>
+			<div class="mdui-textfield-error">请输入合法的邮箱格式 / QQ 请按下「QQ邮箱按钮」</div>
 			<div class="mdui-textfield-helper">在此输入您的邮箱地址</div>
 		</div>
+        
 
 		<div class="mdui-textfield mdui-textfield-floating-label" style="padding-top:0px;">
 			<i class="mdui-icon material-icons">&#xe894;</i>
@@ -29,12 +30,19 @@
 
 		<div class="mdui-textfield mdui-textfield-floating-label" style="padding-top:0px;">
 			<i class="mdui-icon material-icons">&#xe0d8;</i>
-			<label class="mdui-textfield-label">留言内容</label>
+			<label class="mdui-textfield-label">留言内容 不接色情赌博等违反国家法律内容</label>
 			<textarea id="fp_text" class="mdui-textfield-input" maxlength="<? echo $config['board']['msgLength']; ?>" required></textarea>
 			<div class="mdui-textfield-error">请输入留言内容</div>
 			<div class="mdui-textfield-helper">支持 Markdown 语法</div>
 		</div>
-
+        <script>
+             function change(){
+                 fp_email.value=fp_email.value+"@qq.com";
+             }
+        </script>
+        
 		<button onclick="submitFormFast();" class="mdui-btn mdui-ripple mdui-btn-dense mdui-text-color-theme-accent mdui-float-right" style="margin:0">提交</button>
-	</div>
+	    <button onclick="change()" class="mdui-btn mdui-ripple mdui-btn-dense mdui-text-color-theme-accent mdui-float-right" style="margin:0">QQ 邮箱</button>
+        
+</div>
 </div>

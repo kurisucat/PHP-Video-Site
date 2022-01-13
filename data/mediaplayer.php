@@ -5,6 +5,7 @@
 		padding-bottom: 56.25%;
 		height: 0;
 		position: relative;
+        
 	}
 	
 	.video {
@@ -12,6 +13,7 @@
 		height: 100%;
 		background-color: black;
 		position: absolute;
+        border-radius: 5px;
 	}
 </style>
 <div class="scale">

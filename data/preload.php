@@ -10,7 +10,7 @@
 		'db'       => $config['db']['form'],
 		'port'     => $config['db']['port'],
 		'prefix'   => $config['db']['prefix'],
-		'charset'  => 'utf8'
+		'charset'  => 'utf8mb4'
 	));
 	
 	$row = $db->get('config');

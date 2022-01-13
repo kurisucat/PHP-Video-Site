@@ -3,7 +3,7 @@ var drawer = new mdui.Drawer('#drawer', {'swipe': true});
 var jumpMsgPage = new mdui.Dialog('#jumpMsgPage');
 var jumpMsgFloor = new mdui.Dialog('#jumpMsgFloor');
 
-$(document).pjax('a[target!=_blank]', '#mdui_text_container', {fragment:'#mdui_text_container', timeout:10000});
+$(document).pjax('a[target!=_blank]', '#text_container', {fragment:'#text_container', timeout:10000});
 
 $(document).on('pjax:send', function() {
 	$('#mdui_loading').removeClass('mdui-hidden');

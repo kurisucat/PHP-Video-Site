@@ -3,7 +3,8 @@
 
 <h1 id="title"><? echo $global['site']['name']; ?></h1>
 
-<? if (!$admin['isAdmin']) { ?>
+
+<? /*if (!$admin['isAdmin']) { ?>
 	<div class="mdui-card mdui-hoverable">
 		<div class="mdui-card-content" style="padding-bottom:0">
 			<p style="margin: 0 4px 4px 4px;">您还未登录，请立即登录。登录后才可进行管理操作。</p>
@@ -26,13 +27,14 @@
 		</div>
 	</div>
 	<br>
-<? } ?>
+<? }*/ ?>
+
 
 <div class="mdui-tab" mdui-tab>
 	<a href="#global" class="mdui-ripple">全局设置</a>
 	<a href="#media" class="mdui-ripple">媒体设置</a>
 </div>
-
+<h1>你妈这里老子不改了他妈的——kurisu 2021年8月19日01:15:07</h1>
 <div id="global" class="mdui-p-a-2">
 	<div class="mdui-textfield">
 		<label class="mdui-textfield-label">站点名称</label>
@@ -120,6 +122,12 @@
 				<label class="mdui-textfield-label">视频标题</label>
 				<input class="mdui-textfield-input" type="text" placeholder="视频的标题，必填" id="mediaDialogName" required/>
 				<div class="mdui-textfield-error">视频标题不能为空</div>
+			</div>
+ 
+            <div class="mdui-textfield">
+				<label class="mdui-textfield-label">视频简介</label>
+				<input class="mdui-textfield-input" type="text" placeholder="视频的简介，必填" id="mediaDialogDescription" required/>
+				<div class="mdui-textfield-error">视频简介不能为空（可打空格）</div>
 			</div>
 			
 			<div class="mdui-textfield" style="padding-top:0">

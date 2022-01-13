@@ -10,12 +10,11 @@
 
 			if (xmlhttp.responseText >= 0){
 				var $jumpMessage = xmlhttp.responseText;
-				var $responseText = "提交成功，即将跳转至您的留言...";
+				var $responseText = "提交成功，消息正在审核。";
 				mdui.snackbar({
 					message: $responseText,
 					onClosed: function (){
-						document.getElementById('JumpLink').href = 'board/' + Math.ceil($jumpMessage / <?php echo $config['board']['msgPerPage']; ?>) + '#message_' + $jumpMessage;
-						document.getElementById('JumpLink').click();
+						
 					}
 				});
 				
@@ -49,7 +48,7 @@
 	}
 	
 	function jumpBoardPage() {
-		jumpMsgPage.close();
+		// jumpMsgPage.close();
 		var $jumpPage = $('#jumpPage').val();
 		$jumpPage = Math.floor($jumpPage);
 		

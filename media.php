@@ -21,7 +21,8 @@
 		$db->where('id', $media['now']['id']);
 		$media['now'] = $db->getOne('data');
 		$media['now']['title'] = $media['now']['name'];
-		
+		$media['now']['description'] = $media['now']['description'];
+
 		if (!empty($media['now']['id'])) {
 			$media['pre'] = $db->rawQueryOne('SELECT * FROM data WHERE id = (SELECT id FROM data WHERE id < ' . $media['now']['id'] . ' ORDER BY id DESC LIMIT 1)');
 			$media['pre']['title'] = !empty($media['pre']['id']) ? $media['pre']['name'] : '没有了';
